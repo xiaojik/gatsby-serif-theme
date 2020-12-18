@@ -20,7 +20,6 @@
         "meta_twitter_creator": "@zerostaticio"
     },
     "footer": {
-        "copyright_text": "Free Gatsby theme by",
-        "copyright_link": "https://www.zerostatic.io"
+        "copyright_text": "Gatsby theme"
     }
 }
