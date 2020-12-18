@@ -1,40 +1,21 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import SEO from '../components/SEO';
-import Layout from '../components/Layout';
-import Call from '../components/Call';
-
-const Contact = ({ data }) => {
-  const { title } = data.markdownRemark.frontmatter;
-  const { html } = data.markdownRemark;
-  return (
-    <Layout bodyClass="page-default-single">
-      <div className="container pb-6 pt-6 pt-md-10 pb-md-10">
-        <div className="row justify-content-start">
-          <div className="col-12 col-md-8">
-            <h1 className="title">{title}</h1>
-            <Call showButton={false} />
-            <div className="content mt-4" dangerouslySetInnerHTML={{ __html: html }} />
-          </div>
-        </div>
-      </div>
-    </Layout>
-  );
-};
-
-export const query = graphql`
-  query($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        title
-        path
-      }
-      fields {
-        slug
-      }
-      html
-    }
-  }
-`;
-
-export default Contact;
+<form method="post" action="https://getform.io/{your-unique-getform-endpoint}">
+  ...
+  <label>
+    Email
+    <input type="email" name="email" />
+  </label>
+  <label>
+    Name
+    <input type="text" name="name" />
+  </label>
+  <label>
+    Message
+    <input type="text" name="message" />
+  </label>
+  ...
+</form>
+- <form method="post" action="#">
++ <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
++   <input type="hidden" name="bot-field" />
++   <input type="hidden" name="form-name" value="contact" />
+  ...
